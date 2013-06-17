@@ -8,11 +8,23 @@
 
 #import "SinaWeiboAuthViewController.h"
 #import "SinaWeiboConstants.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "SinaWeibo.h"
+
+
+UIViewController* findTopMostVC()
+{
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    return topController;
+}
 
 @interface SinaWeiboAuthViewController ()
 
 @property (nonatomic, retain) SinaWeibo *sinaweibo;
-
 @property (nonatomic, assign, readonly) NSString *apiKey;
 @property (nonatomic, assign, readonly) NSString *apiSecret;
 @property (nonatomic, assign, readonly) NSString *redirectURL;
@@ -21,9 +33,26 @@
 
 @implementation SinaWeiboAuthViewController
 
+- (id)initWithParameters:(NSDictionary *)parameters delegate:(id<SinaWeiboDelegate>)delegate
+{
+    self = [self initWithParameters:parameters];
+    if (self) {
+        self.sinaweibo = [[SinaWeibo alloc] initWithAppKey:self.apiKey appSecret:self.apiSecret appRedirectURI:self.redirectURL andDelegate:delegate];
+        self.sinaweibo.authVC = self;
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"SinaWeibo Auth";
+    [self.view addSubview:self.webView];
+}
+
 - (NSString *)apiKey
 {
-    return [self.parameters valueForKey:@"apikey"];
+    return [self.parameters valueForKey:@"key"];
 }
 
 - (NSString *)apiSecret
@@ -33,20 +62,33 @@
 
 - (NSString *)redirectURL
 {
-    return [self.parameters valueForKey:@"redirect_url"];
+    return [self.parameters valueForKey:@"redirect"];
 }
 
-- (SinaWeibo *)sinaweibo
+- (BOOL)isAuthenticated
 {
-    if (!_sinaweibo) {
-        _sinaweibo = [[SinaWeibo alloc] initWithAppKey:self.apiKey appSecret:self.apiSecret appRedirectURI:self.redirectURL andDelegate:self];
-    }
-    return _sinaweibo;
+    return [self.sinaweibo isAuthValid];
 }
 
 - (void)requestAuth
 {
     [self.sinaweibo logIn];
+    
+}
+
+- (void)logout
+{
+    [self.sinaweibo logOut];
+}
+
+- (void)openAuthDialog
+{
+     [findTopMostVC() presentViewController:self animated:YES completion:nil];
+}
+
+- (void)closeAuthDialog
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UIWebView Delegate
@@ -72,16 +114,15 @@
                                        error_code, @"error_code",
                                        error_description, @"error_description", nil];
             
-            [self popBack];
+            [self closeAuthDialog];
             [self.sinaweibo weiboAuthViewController:self didFailWithErrorInfo:errorInfo];
-            
         }
         else
         {
             NSString *code = [SinaWeiboRequest getParamValueFromUrl:url paramName:@"code"];
             if (code)
             {
-                [self popBack];
+                [self closeAuthDialog];
                 [self.sinaweibo weiboAuthViewController:self didRecieveAuthorizationCode:code];
             }
         }
@@ -97,9 +138,5 @@
     [self.sinaweibo weiboAuthViewControllerDidCancel:self];
 }
 
-- (void)popBack
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end

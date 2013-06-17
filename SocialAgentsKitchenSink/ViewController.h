@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SinaWeibo.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SinaWeiboDelegate>
+
+- (IBAction)authForSinaweibo:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *weiboAuthButton;
 
 @end

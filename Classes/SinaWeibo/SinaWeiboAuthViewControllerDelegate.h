@@ -18,5 +18,4 @@
            didFailWithErrorInfo:(NSDictionary *)errorInfo;
 - (void)weiboAuthViewControllerDidCancel:(SinaWeiboAuthViewController *)authViewController;
 
-
 @end

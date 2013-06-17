@@ -11,7 +11,9 @@
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
 
-@interface SinaWeiboAuthViewController : BaseAuthViewController <SinaWeiboDelegate, SinaWeiboRequestDelegate>
+@interface SinaWeiboAuthViewController : BaseAuthViewController
+
+- (id)initWithParameters:(NSDictionary *)parameters delegate:(id<SinaWeiboDelegate>)delegate;
 
 
 @end

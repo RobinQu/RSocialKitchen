@@ -10,6 +10,9 @@
 #import "SinaWeiboRequest.h"
 #import "SinaWeiboConstants.h"
 
+
+
+
 @interface SinaWeibo ()
 
 @property (nonatomic, copy) NSString *appKey;
@@ -68,6 +71,16 @@
         self.appRedirectURI = _appRedirectURI;
         self.delegate = _delegate;
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
+        if (sinaweiboInfo && [sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+        {
+            self.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
+            self.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
+            self.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+            
+        }
+        
         if (!_ssoCallbackScheme)
         {
             _ssoCallbackScheme = [NSString stringWithFormat:@"sinaweibosso.%@://", self.appKey];
@@ -111,6 +124,9 @@
     self.userID = nil;
     self.expirationDate = nil;
     
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SinaWeiboAuthData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray* sinaweiboCookies = [cookies cookiesForURL:
                                 [NSURL URLWithString:@"https://open.weibo.cn"]];
@@ -119,6 +135,17 @@
     {
         [cookies deleteCookie:cookie];
     }
+}
+
+- (void)storeAuthentication
+{
+    NSDictionary *auth = [NSDictionary dictionaryWithObjectsAndKeys:
+                          self.accessToken, @"AccessTokenKey",
+                          self.expirationDate, @"ExpirationDateKey",
+                          self.userID, @"UserIDKey",
+                          self.refreshToken, @"refresh_token", nil];
+    [[NSUserDefaults standardUserDefaults] setObject:auth forKey: @"SinaWeiboAuthData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Private methods
@@ -208,6 +235,7 @@
         self.accessToken = access_token;
         self.userID = uid;
         self.refreshToken = refresh_token;
+        [self storeAuthentication];
         
         if ([delegate respondsToSelector:@selector(sinaweiboDidLogIn:)])
         {
@@ -329,6 +357,7 @@
                                     self.appRedirectURI, @"redirect_uri", 
                                     @"mobile", @"display", nil];
             NSString *authPagePath = [SinaWeiboRequest serializeURL:kSinaWeiboWebAuthURL params:params httpMethod:@"GET"];
+            [self.authVC openAuthDialog];
             [self.authVC loadURL:[NSURL URLWithString:authPagePath]];
         }
     }

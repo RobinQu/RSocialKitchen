@@ -10,8 +10,6 @@
 
 @interface BaseAuthViewController ()
 
-
-
 @end
 
 @implementation BaseAuthViewController
@@ -51,8 +49,7 @@
     if (!_webView) {
         _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
         _webView.delegate = self;
-        //        _webView.frame = self.view.frame;
-        [self.view addSubview:_webView];
+        _webView.frame = [self frameForMainContent];
     }
     return _webView;
 }
@@ -63,5 +60,20 @@
     [self.webView loadRequest:urlRequest];
 }
 
+- (void)requestAuth
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+}
+
+- (BOOL)isAuthenticated
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+    return NO;
+}
+
+- (void)cancel
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+}
 
 @end
