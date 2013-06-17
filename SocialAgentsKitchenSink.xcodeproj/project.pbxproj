@@ -22,6 +22,15 @@
 		255B0629176EA34D00063714 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255B0608176EA34D00063714 /* UIKit.framework */; };
 		255B0631176EA34D00063714 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 255B062F176EA34D00063714 /* InfoPlist.strings */; };
 		255B0633176EA34D00063714 /* SocialAgentsKitchenSinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0632176EA34D00063714 /* SocialAgentsKitchenSinkTests.m */; };
+		255B0644176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		255B0645176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; };
+		255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; };
+		255B064B176EAA3900063714 /* BaseAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B064A176EAA3900063714 /* BaseAuthViewController.m */; };
+		255B064C176EAA3900063714 /* BaseAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B064A176EAA3900063714 /* BaseAuthViewController.m */; };
+		255B064F176EAC4700063714 /* SinaWeiboAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B064E176EAC4700063714 /* SinaWeiboAuthViewController.m */; };
+		255B0650176EAC4700063714 /* SinaWeiboAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B064E176EAC4700063714 /* SinaWeiboAuthViewController.m */; };
+		852552A92B144126A6F5168D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A87176509C90416781EA28D4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +64,18 @@
 		255B062E176EA34D00063714 /* SocialAgentsKitchenSinkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocialAgentsKitchenSinkTests-Info.plist"; sourceTree = "<group>"; };
 		255B0630176EA34D00063714 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		255B0632176EA34D00063714 /* SocialAgentsKitchenSinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialAgentsKitchenSinkTests.m; sourceTree = "<group>"; };
+		255B063E176EA4F400063714 /* SinaWeibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeibo.h; sourceTree = "<group>"; };
+		255B063F176EA4F400063714 /* SinaWeibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeibo.m; sourceTree = "<group>"; };
+		255B0640176EA4F400063714 /* SinaWeiboConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboConstants.h; sourceTree = "<group>"; };
+		255B0641176EA4F400063714 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
+		255B0642176EA4F400063714 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
+		255B0643176EA4F400063714 /* SinaWeiboAuthViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthViewControllerDelegate.h; sourceTree = "<group>"; };
+		255B0649176EAA3900063714 /* BaseAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAuthViewController.h; sourceTree = "<group>"; };
+		255B064A176EAA3900063714 /* BaseAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAuthViewController.m; sourceTree = "<group>"; };
+		255B064D176EAC4700063714 /* SinaWeiboAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthViewController.h; sourceTree = "<group>"; };
+		255B064E176EAC4700063714 /* SinaWeiboAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboAuthViewController.m; sourceTree = "<group>"; };
+		2F52A355566C4CDFB4747D44 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A87176509C90416781EA28D4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +86,7 @@
 				255B0607176EA34D00063714 /* CoreGraphics.framework in Frameworks */,
 				255B0609176EA34D00063714 /* UIKit.framework in Frameworks */,
 				255B0605176EA34D00063714 /* Foundation.framework in Frameworks */,
+				852552A92B144126A6F5168D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,10 +106,13 @@
 		255B05F8176EA34D00063714 = {
 			isa = PBXGroup;
 			children = (
+				255B063C176EA45100063714 /* Vendor */,
+				255B0648176EA55E00063714 /* Classes */,
 				255B060A176EA34D00063714 /* SocialAgentsKitchenSink */,
 				255B062C176EA34D00063714 /* SocialAgentsKitchenSinkTests */,
 				255B0603176EA34D00063714 /* Frameworks */,
 				255B0602176EA34D00063714 /* Products */,
+				2F52A355566C4CDFB4747D44 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +132,7 @@
 				255B0606176EA34D00063714 /* CoreGraphics.framework */,
 				255B0608176EA34D00063714 /* UIKit.framework */,
 				255B0626176EA34D00063714 /* XCTest.framework */,
+				A87176509C90416781EA28D4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +181,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		255B063C176EA45100063714 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				255B063D176EA4DC00063714 /* SinaWeibo */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		255B063D176EA4DC00063714 /* SinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				255B063E176EA4F400063714 /* SinaWeibo.h */,
+				255B063F176EA4F400063714 /* SinaWeibo.m */,
+				255B0640176EA4F400063714 /* SinaWeiboConstants.h */,
+				255B0641176EA4F400063714 /* SinaWeiboRequest.h */,
+				255B0642176EA4F400063714 /* SinaWeiboRequest.m */,
+				255B0643176EA4F400063714 /* SinaWeiboAuthViewControllerDelegate.h */,
+			);
+			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		255B0648176EA55E00063714 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				255B0649176EAA3900063714 /* BaseAuthViewController.h */,
+				255B064A176EAA3900063714 /* BaseAuthViewController.m */,
+				255B064D176EAC4700063714 /* SinaWeiboAuthViewController.h */,
+				255B064E176EAC4700063714 /* SinaWeiboAuthViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 255B0636176EA34D00063714 /* Build configuration list for PBXNativeTarget "SocialAgentsKitchenSink" */;
 			buildPhases = (
+				353DACFBD1BD4E20A347BAFF /* Check Pods Manifest.lock */,
 				255B05FD176EA34D00063714 /* Sources */,
 				255B05FE176EA34D00063714 /* Frameworks */,
 				255B05FF176EA34D00063714 /* Resources */,
+				0030B2BA2B1E400A81C75E60 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +262,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Robin Qu";
 				TargetAttributes = {
+					255B0600176EA34D00063714 = {
+						DevelopmentTeam = Y3D576AB47;
+					};
 					255B0624176EA34D00063714 = {
 						TestTargetID = 255B0600176EA34D00063714;
 					};
@@ -248,14 +311,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0030B2BA2B1E400A81C75E60 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		353DACFBD1BD4E20A347BAFF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		255B05FD176EA34D00063714 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255B064F176EAC4700063714 /* SinaWeiboAuthViewController.m in Sources */,
+				255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */,
+				255B064B176EAA3900063714 /* BaseAuthViewController.m in Sources */,
 				255B061E176EA34D00063714 /* ViewController.m in Sources */,
 				255B0615176EA34D00063714 /* AppDelegate.m in Sources */,
 				255B0611176EA34D00063714 /* main.m in Sources */,
+				255B0644176EA4F400063714 /* SinaWeibo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +361,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255B0650176EAC4700063714 /* SinaWeiboAuthViewController.m in Sources */,
 				255B0633176EA34D00063714 /* SocialAgentsKitchenSinkTests.m in Sources */,
+				255B0645176EA4F400063714 /* SinaWeibo.m in Sources */,
+				255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */,
+				255B064C176EAA3900063714 /* BaseAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,12 +487,15 @@
 		};
 		255B0637176EA34D00063714 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F52A355566C4CDFB4747D44 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialAgentsKitchenSink/SocialAgentsKitchenSink-Prefix.pch";
 				INFOPLIST_FILE = "SocialAgentsKitchenSink/SocialAgentsKitchenSink-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -398,12 +503,15 @@
 		};
 		255B0638176EA34D00063714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F52A355566C4CDFB4747D44 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialAgentsKitchenSink/SocialAgentsKitchenSink-Prefix.pch";
 				INFOPLIST_FILE = "SocialAgentsKitchenSink/SocialAgentsKitchenSink-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -468,6 +576,7 @@
 				255B0638176EA34D00063714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		255B0639176EA34D00063714 /* Build configuration list for PBXNativeTarget "SocialAgentsKitchenSinkTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +585,7 @@
 				255B063B176EA34D00063714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
