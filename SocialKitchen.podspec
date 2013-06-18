@@ -1,8 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "SocialKitchen"
   s.version      = "0.0.1"
-  s.summary      = "Kitchen sink that demostartes OAuth flow for service providers(weibo, tcwb)"
+  s.summary      = "Kitchen sink that demostartes OAuth flow for service providers(weibo, tcwb)."
   s.homepage     = "https://github.com/RobinQu/RSocialKitchen"
+  
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
 
   s.author       = { "RobinQu" => "robinqu@gmail.com" }
 
@@ -18,4 +20,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'JSONKit', '1.5pre'
+  s.dependency 'JSONKit', '1.5pre'
+  s.dependency "SVProgressHUD", "0.9"
 end

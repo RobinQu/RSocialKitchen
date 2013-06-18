@@ -15,7 +15,3 @@
 
 * 解除了和SinaWeiboAuthorizeView的绑定，使用标准的UIViewController封装的一个WebView。详见 `SinaWeiboAuthViewController`
 * 自动存储认证信息(AccessToken,Expiration等)；默认是存储到公共的NSUserDefault里面
-
-##TODO
-* 来自weibo SDK的几个文件需要转换成ARC
-* TCWB? 有必要么。。。。。。
