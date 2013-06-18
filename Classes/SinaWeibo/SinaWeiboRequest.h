@@ -34,7 +34,7 @@
 
 @interface SinaWeiboRequest : NSObject
 {
-    SinaWeibo                       *sinaweibo;//weak reference
+    __unsafe_unretained SinaWeibo                       *sinaweibo;//weak reference
     
     NSString                        *url;
     NSString                        *httpMethod;
@@ -43,7 +43,7 @@
     NSURLConnection                 *connection;
     NSMutableData                   *responseData;
     
-    id<SinaWeiboRequestDelegate>    delegate;
+    __unsafe_unretained id<SinaWeiboRequestDelegate>    delegate;
 }
 
 @property (nonatomic, assign) SinaWeibo *sinaweibo;

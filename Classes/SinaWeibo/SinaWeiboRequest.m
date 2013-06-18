@@ -31,7 +31,7 @@
 
 - (NSString *)URLEncodedStringWithCFStringEncoding:(CFStringEncoding)encoding
 {
-    return [(NSString *) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[[self mutableCopy] autorelease], NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), encoding) autorelease];
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[self mutableCopy], NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), encoding));
 }
 
 - (NSString *)URLEncodedString
@@ -70,22 +70,22 @@
 
 #pragma mark - SinaWeiboRequest Life Circle
 
-- (void)dealloc
-{
-    sinaweibo = nil;
-    
-    [url release], url = nil;
-    [httpMethod release], httpMethod = nil;
-    [params release], params = nil;
-    
-    [responseData release];
-	responseData = nil;
-    
-    [connection cancel];
-    [connection release], connection = nil;
-    
-    [super dealloc];
-}
+//- (void)dealloc
+//{
+//    sinaweibo = nil;
+//    
+//    [url release], url = nil;
+//    [httpMethod release], httpMethod = nil;
+//    [params release], params = nil;
+//    
+//    [responseData release];
+//	responseData = nil;
+//    
+//    [connection cancel];
+//    [connection release], connection = nil;
+//    
+//    [super dealloc];
+//}
 
 #pragma mark - SinaWeiboRequest Private Methods
 
@@ -127,13 +127,13 @@
             {
                 NSData* imageData = UIImagePNGRepresentation((UIImage *)dataParam);
                 [self appendUTF8Body:body dataString:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"file\"\r\n", key]];
-                [self appendUTF8Body:body dataString:[NSString stringWithString:@"Content-Type: image/png\r\nContent-Transfer-Encoding: binary\r\n\r\n"]];
+                [self appendUTF8Body:body dataString:@"Content-Type: image/png\r\nContent-Transfer-Encoding: binary\r\n\r\n"];
                 [body appendData:imageData];
             } 
             else if ([dataParam isKindOfClass:[NSData class]]) 
             {
                 [self appendUTF8Body:body dataString:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"file\"\r\n", key]];
-                [self appendUTF8Body:body dataString:[NSString stringWithString:@"Content-Type: content/unknown\r\nContent-Transfer-Encoding: binary\r\n\r\n"]];
+                [self appendUTF8Body:body dataString:@"Content-Type: content/unknown\r\nContent-Transfer-Encoding: binary\r\n\r\n"];
                 [body appendData:(NSData*)dataParam];
             }
             [self appendUTF8Body:body dataString:bodySuffixString];
@@ -279,15 +279,15 @@
             continue;
         }
         
-        NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(
+        NSString* escaped_value = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                       NULL, /* allocator */
                                                                                       (CFStringRef)[params objectForKey:key],
                                                                                       NULL, /* charactersToLeaveUnescaped */
                                                                                       (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                                      kCFStringEncodingUTF8);
+                                                                                      kCFStringEncodingUTF8));
         
         [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escaped_value]];
-        [escaped_value release];
+//        [escaped_value release];
     }
     NSString* query = [pairs componentsJoinedByString:@"&"];
     
@@ -299,7 +299,7 @@
                               params:(NSDictionary *)params
                             delegate:(id<SinaWeiboRequestDelegate>)delegate
 {
-    SinaWeiboRequest *request = [[[SinaWeiboRequest alloc] init] autorelease];
+    SinaWeiboRequest *request = [[SinaWeiboRequest alloc] init];
     
     request.url = url;
     request.httpMethod = httpMethod;
@@ -351,11 +351,11 @@
 
 - (void)disconnect
 {
-    [responseData release];
-	responseData = nil;
+//    [responseData release];
+//	responseData = nil;
     
     [connection cancel];
-    [connection release], connection = nil;
+//    [connection release], connection = nil;
 }
 
 #pragma mark - NSURLConnection Delegate Methods
@@ -385,12 +385,12 @@
 {
 	[self handleResponseData:responseData];
     
-	[responseData release];
-	responseData = nil;
+//	[responseData release];
+//	responseData = nil;
     
     [connection cancel];
-	[connection release];
-	connection = nil;
+//	[connection release];
+//	connection = nil;
     
     [sinaweibo requestDidFinish:self];
 }
@@ -399,12 +399,12 @@
 {
 	[self failedWithError:error];
 	
-	[responseData release];
-	responseData = nil;
+//	[responseData release];
+//	responseData = nil;
     
     [connection cancel];
-	[connection release];
-	connection = nil;
+//	[connection release];
+//	connection = nil;
     
     [sinaweibo requestDidFinish:self];
 }

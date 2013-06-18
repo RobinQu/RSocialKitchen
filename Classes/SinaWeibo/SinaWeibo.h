@@ -18,7 +18,7 @@
     NSString *userID;
     NSString *accessToken;
     NSDate *expirationDate;
-    id<SinaWeiboDelegate> delegate;
+    __unsafe_unretained id<SinaWeiboDelegate> delegate;
     
     NSString *appKey;
     NSString *appSecret;

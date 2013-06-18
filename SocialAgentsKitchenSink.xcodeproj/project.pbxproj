@@ -31,9 +31,9 @@
 		255B0629176EA34D00063714 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255B0608176EA34D00063714 /* UIKit.framework */; };
 		255B0631176EA34D00063714 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 255B062F176EA34D00063714 /* InfoPlist.strings */; };
 		255B0633176EA34D00063714 /* SocialAgentsKitchenSinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0632176EA34D00063714 /* SocialAgentsKitchenSinkTests.m */; };
-		255B0644176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		255B0644176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; };
 		255B0645176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; };
-		255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; };
 		255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; };
 		852552A92B144126A6F5168D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A87176509C90416781EA28D4 /* libPods.a */; };
 /* End PBXBuildFile section */

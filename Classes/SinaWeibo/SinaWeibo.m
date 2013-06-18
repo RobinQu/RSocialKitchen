@@ -93,27 +93,27 @@
     return self;
 }
 
-- (void)dealloc
-{
-    delegate = nil;
-    
-    for (SinaWeiboRequest* _request in requests)
-    {
-        _request.sinaweibo = nil;
-    }
-    
-    [request disconnect];
-    [request release], request = nil;
-    [userID release], userID = nil;
-    [accessToken release], accessToken = nil;
-    [expirationDate release], expirationDate = nil;
-    [appKey release], appKey = nil;
-    [appSecret release], appSecret = nil;
-    [appRedirectURI release], appRedirectURI = nil;
-    [ssoCallbackScheme release], ssoCallbackScheme = nil;
-    
-    [super dealloc];
-}
+//- (void)dealloc
+//{
+//    delegate = nil;
+//    
+//    for (SinaWeiboRequest* _request in requests)
+//    {
+//        _request.sinaweibo = nil;
+//    }
+//    
+//    [request disconnect];
+//    [request release], request = nil;
+//    [userID release], userID = nil;
+//    [accessToken release], accessToken = nil;
+//    [expirationDate release], expirationDate = nil;
+//    [appKey release], appKey = nil;
+//    [appSecret release], appSecret = nil;
+//    [appRedirectURI release], appRedirectURI = nil;
+//    [ssoCallbackScheme release], ssoCallbackScheme = nil;
+//    
+//    [super dealloc];
+//}
 
 /**
  * @description 清空认证信息
@@ -159,12 +159,12 @@
                             self.appRedirectURI, @"redirect_uri",
                             code, @"code", nil];
     [request disconnect];
-    [request release], request = nil;
+//    [request release], request = nil;
     
-    request = [[SinaWeiboRequest requestWithURL:kSinaWeiboWebAccessTokenURL
+    request = [SinaWeiboRequest requestWithURL:kSinaWeiboWebAccessTokenURL
                                      httpMethod:@"POST"
                                          params:params
-                                       delegate:self] retain];
+                                       delegate:self];
     
     [request connect];
 }
@@ -466,7 +466,7 @@
             [delegate sinaweibo:self logInDidFailWithError:error];
         }
         
-        [request release], request = nil;
+//        [request release], request = nil;
     }
 }
 
@@ -477,7 +477,7 @@
         NSLog(@"access token result = %@", result);
         
         [self logInDidFinishWithAuthInfo:result];
-        [request release], request = nil;
+//        [request release], request = nil;
     }
 }
 
