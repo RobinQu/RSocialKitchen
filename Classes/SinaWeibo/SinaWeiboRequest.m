@@ -19,6 +19,7 @@
 #import "SinaWeiboConstants.h"
 #import "JSONKit.h"
 #import "SinaWeibo.h"
+#import "OAuthData.h"
 
 #define kSinaWeiboRequestTimeOutInterval   180.0
 #define kSinaWeiboRequestStringBoundary    @"293iosfksdfkiowjksdf31jsiuwq003s02dsaffafass3qw"

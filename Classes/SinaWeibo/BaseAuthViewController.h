@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ModalViewController.h"
+#import <RUIKitchen/RModalViewController.h>
 
-@interface BaseAuthViewController : ModalViewController <UIWebViewDelegate>
+@interface BaseAuthViewController : RModalViewController <UIWebViewDelegate>
 
 @property (nonatomic, retain) UIWebView *webView;
 @property (nonatomic, retain) NSDictionary *parameters;

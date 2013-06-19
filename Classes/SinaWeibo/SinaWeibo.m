@@ -9,7 +9,7 @@
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
 #import "SinaWeiboConstants.h"
-
+#import "OAuthData.h"
 
 
 
@@ -70,13 +70,13 @@
         self.appRedirectURI = _appRedirectURI;
         self.delegate = _delegate;
         
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
-        if (sinaweiboInfo && [sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+        OAuthData *sinaweiboInfo = [OAuthData readAuthDataWithLabel:WeiboOAuthDataLabel];
+        if (sinaweiboInfo)
         {
-            self.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
-            self.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
-            self.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+            self.accessToken = sinaweiboInfo.accessToken;
+            self.expirationDate = sinaweiboInfo.expirationDate;
+            self.userID = sinaweiboInfo.userID;
+            self.refreshToken = sinaweiboInfo.refreshToken;
         }
         
         if (!_ssoCallbackScheme)
@@ -91,28 +91,6 @@
     return self;
 }
 
-//- (void)dealloc
-//{
-//    delegate = nil;
-//    
-//    for (SinaWeiboRequest* _request in requests)
-//    {
-//        _request.sinaweibo = nil;
-//    }
-//    
-//    [request disconnect];
-//    [request release], request = nil;
-//    [userID release], userID = nil;
-//    [accessToken release], accessToken = nil;
-//    [expirationDate release], expirationDate = nil;
-//    [appKey release], appKey = nil;
-//    [appSecret release], appSecret = nil;
-//    [appRedirectURI release], appRedirectURI = nil;
-//    [ssoCallbackScheme release], ssoCallbackScheme = nil;
-//    
-//    [super dealloc];
-//}
-
 /**
  * @description 清空认证信息
  */
@@ -122,8 +100,7 @@
     self.userID = nil;
     self.expirationDate = nil;
     
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SinaWeiboAuthData"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [OAuthData clearAuthDataWithLabel:WeiboOAuthDataLabel];
     
     NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray* sinaweiboCookies = [cookies cookiesForURL:
@@ -133,17 +110,6 @@
     {
         [cookies deleteCookie:cookie];
     }
-}
-
-- (void)storeAuthentication
-{
-    NSDictionary *auth = [NSDictionary dictionaryWithObjectsAndKeys:
-                          self.accessToken, @"AccessTokenKey",
-                          self.expirationDate, @"ExpirationDateKey",
-                          self.userID, @"UserIDKey",
-                          self.refreshToken, @"refresh_token", nil];
-    [[NSUserDefaults standardUserDefaults] setObject:auth forKey: @"SinaWeiboAuthData"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Private methods
@@ -233,7 +199,8 @@
         self.accessToken = access_token;
         self.userID = uid;
         self.refreshToken = refresh_token;
-        [self storeAuthentication];
+
+        [[[OAuthData alloc] initWithAccessToken:self.accessToken expirationDate:self.expirationDate refreshToken:self.refreshToken userID:self.userID] storeForLabel:WeiboOAuthDataLabel];
         
         if ([delegate respondsToSelector:@selector(sinaweiboDidLogIn:)])
         {

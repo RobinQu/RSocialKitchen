@@ -40,6 +40,7 @@ UIViewController* findTopMostVC()
     dispatch_once(&onceToken, ^{
         NSString *fp = [[NSBundle mainBundle] pathForResource:@"weibo" ofType:@"plist"];
         NSDictionary *p = [[NSDictionary alloc] initWithContentsOfFile:fp];
+        NSAssert(p, @"Configration file weibo.plist is missing");
         vc = [[SinaWeiboAuthViewController alloc] initWithParameters:p];
     });
     return vc;

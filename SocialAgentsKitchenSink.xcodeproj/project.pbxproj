@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25235E7B176F022500D8D8A0 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E7A176F022500D8D8A0 /* ModalViewController.m */; };
-		25235E7C176F022500D8D8A0 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E7A176F022500D8D8A0 /* ModalViewController.m */; };
 		2552D82F176EEA5E008CDB7B /* weibo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 255B0651176EC18A00063714 /* weibo.plist */; };
 		2552D834176EED42008CDB7B /* BaseAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2552D831176EED42008CDB7B /* BaseAuthViewController.m */; };
 		2552D835176EED42008CDB7B /* BaseAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2552D831176EED42008CDB7B /* BaseAuthViewController.m */; };
@@ -33,6 +31,8 @@
 		255B0645176EA4F400063714 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B063F176EA4F400063714 /* SinaWeibo.m */; };
 		255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; };
 		255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 255B0642176EA4F400063714 /* SinaWeiboRequest.m */; };
+		258DA6F81771E8C000953C70 /* OAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 258DA6F71771E8C000953C70 /* OAuthData.m */; };
+		258DA6F91771E8C000953C70 /* OAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 258DA6F71771E8C000953C70 /* OAuthData.m */; };
 		852552A92B144126A6F5168D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A87176509C90416781EA28D4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25235E79176F022500D8D8A0 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalViewController.h; path = Classes/ModalViewController.h; sourceTree = "<group>"; };
-		25235E7A176F022500D8D8A0 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalViewController.m; path = Classes/ModalViewController.m; sourceTree = "<group>"; };
 		2552D830176EED42008CDB7B /* BaseAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAuthViewController.h; sourceTree = "<group>"; };
 		2552D831176EED42008CDB7B /* BaseAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAuthViewController.m; sourceTree = "<group>"; };
 		2552D832176EED42008CDB7B /* SinaWeiboAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthViewController.h; sourceTree = "<group>"; };
@@ -80,6 +78,8 @@
 		255B0642176EA4F400063714 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
 		255B0643176EA4F400063714 /* SinaWeiboAuthViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAuthViewControllerDelegate.h; sourceTree = "<group>"; };
 		255B0651176EC18A00063714 /* weibo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = weibo.plist; sourceTree = "<group>"; };
+		258DA6F61771E8C000953C70 /* OAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthData.h; sourceTree = "<group>"; };
+		258DA6F71771E8C000953C70 /* OAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthData.m; sourceTree = "<group>"; };
 		2F52A355566C4CDFB4747D44 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A87176509C90416781EA28D4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,6 +200,8 @@
 				255B0641176EA4F400063714 /* SinaWeiboRequest.h */,
 				255B0642176EA4F400063714 /* SinaWeiboRequest.m */,
 				255B0643176EA4F400063714 /* SinaWeiboAuthViewControllerDelegate.h */,
+				258DA6F61771E8C000953C70 /* OAuthData.h */,
+				258DA6F71771E8C000953C70 /* OAuthData.m */,
 			);
 			name = SinaWeibo;
 			path = Classes/SinaWeibo;
@@ -208,8 +210,6 @@
 		255B0648176EA55E00063714 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				25235E79176F022500D8D8A0 /* ModalViewController.h */,
-				25235E7A176F022500D8D8A0 /* ModalViewController.m */,
 				255B063D176EA4DC00063714 /* SinaWeibo */,
 			);
 			name = Classes;
@@ -351,11 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2552D836176EED42008CDB7B /* SinaWeiboAuthViewController.m in Sources */,
+				258DA6F81771E8C000953C70 /* OAuthData.m in Sources */,
 				255B0646176EA4F400063714 /* SinaWeiboRequest.m in Sources */,
 				2552D834176EED42008CDB7B /* BaseAuthViewController.m in Sources */,
 				255B061E176EA34D00063714 /* ViewController.m in Sources */,
 				255B0615176EA34D00063714 /* AppDelegate.m in Sources */,
-				25235E7B176F022500D8D8A0 /* ModalViewController.m in Sources */,
 				255B0611176EA34D00063714 /* main.m in Sources */,
 				255B0644176EA4F400063714 /* SinaWeibo.m in Sources */,
 			);
@@ -367,8 +367,8 @@
 			files = (
 				2552D837176EED42008CDB7B /* SinaWeiboAuthViewController.m in Sources */,
 				255B0633176EA34D00063714 /* SocialAgentsKitchenSinkTests.m in Sources */,
-				25235E7C176F022500D8D8A0 /* ModalViewController.m in Sources */,
 				255B0645176EA4F400063714 /* SinaWeibo.m in Sources */,
+				258DA6F91771E8C000953C70 /* OAuthData.m in Sources */,
 				255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */,
 				2552D835176EED42008CDB7B /* BaseAuthViewController.m in Sources */,
 			);

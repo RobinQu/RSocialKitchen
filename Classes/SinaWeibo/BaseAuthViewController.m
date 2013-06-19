@@ -76,4 +76,19 @@
     NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
 }
 
+- (void)logout
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+}
+
+- (void)openAuthDialog
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+}
+
+- (void)closeAuthDialog
+{
+    NSAssert([self isKindOfClass:[BaseAuthViewController class]], @"should not be invoke on a base class");
+}
+
 @end
