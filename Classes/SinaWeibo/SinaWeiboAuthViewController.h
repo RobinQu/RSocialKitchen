@@ -15,5 +15,9 @@
 
 - (id)initWithParameters:(NSDictionary *)parameters delegate:(id<SinaWeiboDelegate>)delegate;
 
++ (id)sharedAuthViewController;
+
++ (void)configureSharedDelegate:(id<SinaWeiboDelegate>)delegate;
+
 
 @end

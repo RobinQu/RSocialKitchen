@@ -33,11 +33,39 @@ UIViewController* findTopMostVC()
 
 @implementation SinaWeiboAuthViewController
 
++ (id)sharedAuthViewController
+{
+    static SinaWeiboAuthViewController *vc = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *fp = [[NSBundle mainBundle] pathForResource:@"weibo" ofType:@"plist"];
+        NSDictionary *p = [[NSDictionary alloc] initWithContentsOfFile:fp];
+        vc = [[SinaWeiboAuthViewController alloc] initWithParameters:p];
+    });
+    return vc;
+}
+
++ (void)configureSharedDelegate:(id<SinaWeiboDelegate>)delegate
+{
+    SinaWeiboAuthViewController *vc = [self sharedAuthViewController];
+    vc.sinaweibo.delegate = delegate;
+}
+
+
 - (id)initWithParameters:(NSDictionary *)parameters delegate:(id<SinaWeiboDelegate>)delegate
 {
     self = [self initWithParameters:parameters];
     if (self) {
-        self.sinaweibo = [[SinaWeibo alloc] initWithAppKey:self.apiKey appSecret:self.apiSecret appRedirectURI:self.redirectURL andDelegate:delegate];
+        self.sinaweibo.delegate = delegate;
+    }
+    return self;
+}
+
+- (id)initWithParameters:(NSDictionary *)parameters
+{
+    self = [super initWithParameters:parameters];
+    if (self) {
+        self.sinaweibo = [[SinaWeibo alloc] initWithAppKey:self.apiKey appSecret:self.apiSecret appRedirectURI:self.redirectURL andDelegate:nil];
         self.sinaweibo.authVC = self;
     }
     return self;
@@ -131,6 +159,11 @@ UIViewController* findTopMostVC()
     }
     
     return YES;
+}
+
+- (void)dialogDidCloseByUser
+{
+    [self cancel];
 }
 
 - (void)cancel

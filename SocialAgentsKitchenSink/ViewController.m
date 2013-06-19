@@ -46,9 +46,8 @@
 - (SinaWeiboAuthViewController *)sinaWeiboAuthVC
 {
     if (!_sinaWeiboAuthVC) {
-        NSString *fp = [[NSBundle mainBundle] pathForResource:@"weibo" ofType:@"plist"];
-        NSDictionary *p = [[NSDictionary alloc] initWithContentsOfFile:fp];
-        _sinaWeiboAuthVC = [[SinaWeiboAuthViewController alloc] initWithParameters:p delegate:self];
+        [SinaWeiboAuthViewController configureSharedDelegate:self];
+        _sinaWeiboAuthVC = [SinaWeiboAuthViewController sharedAuthViewController];
     }
     return _sinaWeiboAuthVC;
 }
@@ -91,7 +90,7 @@
 
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {
-    [SVProgressHUD showWithStatus:@"Authentication cancelled"];
+    [SVProgressHUD showErrorWithStatus:@"Authentication cancelled"];
 }
 
 @end

@@ -34,7 +34,6 @@
 @synthesize appRedirectURI;
 
 #pragma mark - Memory management
-
 /**
  * @description 初始化构造函数，返回采用默认sso回调地址构造的SinaWeibo对象
  * @param _appKey: 分配给第三方应用的appkey
@@ -78,7 +77,6 @@
             self.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
             self.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
             self.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
-            
         }
         
         if (!_ssoCallbackScheme)

@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "RobinQu" => "robinqu@gmail.com" }
 
-  s.source       = { :git => "https://github.com/RobinQu/RSocialKitchen.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/RobinQu/RSocialKitchen.git", :tag => "0.0.2" }
 
   s.platform     = :ios, '5.0'
 

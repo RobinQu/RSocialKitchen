@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25235E77176EF16500D8D8A0 /* SWAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E76176EF16500D8D8A0 /* SWAuthViewController.m */; };
-		25235E78176EF16500D8D8A0 /* SWAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E76176EF16500D8D8A0 /* SWAuthViewController.m */; };
 		25235E7B176F022500D8D8A0 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E7A176F022500D8D8A0 /* ModalViewController.m */; };
 		25235E7C176F022500D8D8A0 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25235E7A176F022500D8D8A0 /* ModalViewController.m */; };
 		2552D82F176EEA5E008CDB7B /* weibo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 255B0651176EC18A00063714 /* weibo.plist */; };
@@ -49,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25235E75176EF16500D8D8A0 /* SWAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAuthViewController.h; sourceTree = "<group>"; };
-		25235E76176EF16500D8D8A0 /* SWAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAuthViewController.m; sourceTree = "<group>"; };
 		25235E79176F022500D8D8A0 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModalViewController.h; path = Classes/ModalViewController.h; sourceTree = "<group>"; };
 		25235E7A176F022500D8D8A0 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModalViewController.m; path = Classes/ModalViewController.m; sourceTree = "<group>"; };
 		2552D830176EED42008CDB7B /* BaseAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAuthViewController.h; sourceTree = "<group>"; };
@@ -157,8 +153,6 @@
 				255B061D176EA34D00063714 /* ViewController.m */,
 				255B061F176EA34D00063714 /* Images.xcassets */,
 				255B060B176EA34D00063714 /* Supporting Files */,
-				25235E75176EF16500D8D8A0 /* SWAuthViewController.h */,
-				25235E76176EF16500D8D8A0 /* SWAuthViewController.m */,
 			);
 			path = SocialAgentsKitchenSink;
 			sourceTree = "<group>";
@@ -363,7 +357,6 @@
 				255B0615176EA34D00063714 /* AppDelegate.m in Sources */,
 				25235E7B176F022500D8D8A0 /* ModalViewController.m in Sources */,
 				255B0611176EA34D00063714 /* main.m in Sources */,
-				25235E77176EF16500D8D8A0 /* SWAuthViewController.m in Sources */,
 				255B0644176EA4F400063714 /* SinaWeibo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +370,6 @@
 				25235E7C176F022500D8D8A0 /* ModalViewController.m in Sources */,
 				255B0645176EA4F400063714 /* SinaWeibo.m in Sources */,
 				255B0647176EA4F400063714 /* SinaWeiboRequest.m in Sources */,
-				25235E78176EF16500D8D8A0 /* SWAuthViewController.m in Sources */,
 				2552D835176EED42008CDB7B /* BaseAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

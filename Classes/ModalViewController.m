@@ -63,11 +63,11 @@
 - (void)backAction
 {
     [self dismissViewControllerAnimated:NO completion:nil];
+    SEL didClose = @selector(dialogDidCloseByUser);
+    if ([self respondsToSelector:didClose]) {
+        [self performSelector:didClose];
+    }
 }
 
-- (void)dismisSelf
-{
-    [self backAction];
-}
 
 @end

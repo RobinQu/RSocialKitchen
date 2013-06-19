@@ -39,6 +39,7 @@
 
 @property (nonatomic, assign) id<SinaWeiboDelegate> delegate;
 
+
 - (id)initWithAppKey:(NSString *)appKey appSecret:(NSString *)appSecrect
       appRedirectURI:(NSString *)appRedirectURI
          andDelegate:(id<SinaWeiboDelegate>)delegate;
@@ -87,6 +88,7 @@
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo;
 - (void)sinaweibo:(SinaWeibo *)sinaweibo logInDidFailWithError:(NSError *)error;
 - (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error;
+
 
 @end
 
