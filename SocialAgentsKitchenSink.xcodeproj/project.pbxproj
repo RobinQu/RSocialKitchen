@@ -80,6 +80,7 @@
 		255B0651176EC18A00063714 /* weibo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = weibo.plist; sourceTree = "<group>"; };
 		258DA6F61771E8C000953C70 /* OAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthData.h; sourceTree = "<group>"; };
 		258DA6F71771E8C000953C70 /* OAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthData.m; sourceTree = "<group>"; };
+		258DA6FE1771FA6200953C70 /* SinaWeiboAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboAPI.h; sourceTree = "<group>"; };
 		2F52A355566C4CDFB4747D44 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A87176509C90416781EA28D4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +203,7 @@
 				255B0643176EA4F400063714 /* SinaWeiboAuthViewControllerDelegate.h */,
 				258DA6F61771E8C000953C70 /* OAuthData.h */,
 				258DA6F71771E8C000953C70 /* OAuthData.m */,
+				258DA6FE1771FA6200953C70 /* SinaWeiboAPI.h */,
 			);
 			name = SinaWeibo;
 			path = Classes/SinaWeibo;
