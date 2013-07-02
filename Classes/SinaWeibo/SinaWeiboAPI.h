@@ -11,5 +11,7 @@
 
 
 static NSString *const WeiboUserInfoAPIPath = @"users/show.json";
+static NSString *const WeiboStatusUpdateAPIPath = @"statuses/update.json";
+static NSString *const WeiboStatusRepostAPIPath = @"statuses/repost.json";
 
 #endif
