@@ -76,7 +76,6 @@ UIViewController* findTopMostVC()
 {
     [super viewDidLoad];
     self.title = @"SinaWeibo Auth";
-    [self.view addSubview:self.webView];
 }
 
 - (NSString *)apiKey

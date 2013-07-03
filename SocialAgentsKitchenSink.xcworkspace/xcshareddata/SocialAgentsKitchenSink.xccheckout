@@ -3,48 +3,48 @@
 <plist version="1.0">
 <dict>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>17B5B8D9-DCCC-45BD-BE66-4D33067468EA</string>
+	<string>A54C94C2-5CCB-4C6D-8C90-DBCFD59A3781</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SocialAgentsKitchenSink</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>93EF7845-2B50-483F-8B3A-5DC6FF8CB42F</key>
-		<string>ssh://github.com/RobinQu/RSocialKitchen.git</string>
-		<key>D956BE1F-C15E-4989-891E-D8D13BD0774E</key>
+		<key>4DF474C6-E926-405E-A86D-A2F104618AE5</key>
 		<string>ssh://github.com/RobinQu/RUIKitchen.git</string>
+		<key>FD3EB480-DACA-4E90-B4B7-AAB6ECFDC135</key>
+		<string>ssh://github.com/RobinQu/RSocialKitchen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SocialAgentsKitchenSink.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>93EF7845-2B50-483F-8B3A-5DC6FF8CB42F</key>
-		<string>..</string>
-		<key>D956BE1F-C15E-4989-891E-D8D13BD0774E</key>
+		<key>4DF474C6-E926-405E-A86D-A2F104618AE5</key>
 		<string>../../RUIKitchenSink</string>
+		<key>FD3EB480-DACA-4E90-B4B7-AAB6ECFDC135</key>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/RobinQu/RSocialKitchen.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>93EF7845-2B50-483F-8B3A-5DC6FF8CB42F</string>
+	<string>FD3EB480-DACA-4E90-B4B7-AAB6ECFDC135</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>93EF7845-2B50-483F-8B3A-5DC6FF8CB42F</string>
+			<string>4DF474C6-E926-405E-A86D-A2F104618AE5</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SocialAgentsKitchenSink</string>
+			<string>RUIKitchenSink</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D956BE1F-C15E-4989-891E-D8D13BD0774E</string>
+			<string>FD3EB480-DACA-4E90-B4B7-AAB6ECFDC135</string>
 			<key>IDESourceControlWCCName</key>
-			<string>RUIKitchenSink</string>
+			<string>SocialAgentsKitchenSink</string>
 		</dict>
 	</array>
 </dict>

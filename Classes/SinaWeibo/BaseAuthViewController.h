@@ -7,22 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RUIKitchen/RModalViewController.h>
+#import <RUIKitchen/RWebBrowserViewController.h>
 
-@interface BaseAuthViewController : RModalViewController <UIWebViewDelegate>
+@interface BaseAuthViewController : RWebBrowserViewController <RWebBrowserDelegate>
 
-@property (nonatomic, retain) UIWebView *webView;
 @property (nonatomic, retain) NSDictionary *parameters;
 
 - (id)initWithParameters:(NSDictionary *)parameters;
-
 - (void)openAuthDialog;
 - (void)closeAuthDialog;
-
-
 - (void)requestAuth;
 - (void)logout;
-- (void)loadURL:(NSURL *)url;
 - (BOOL)isAuthenticated;
 - (void)cancel;
 

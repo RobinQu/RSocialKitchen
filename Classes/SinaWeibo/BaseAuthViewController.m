@@ -19,6 +19,7 @@
     self = [self initWithNibName:nil bundle:nil];
     if (self) {
         self.parameters = parameters;
+        self.delegate = self;
     }
     return self;
 }
@@ -42,22 +43,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (UIWebView *)webView
-{
-    if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-        _webView.delegate = self;
-        _webView.frame = [self frameForMainContent];
-    }
-    return _webView;
-}
-
-- (void)loadURL:(NSURL *)url
-{
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-    [self.webView loadRequest:urlRequest];
 }
 
 - (void)requestAuth
