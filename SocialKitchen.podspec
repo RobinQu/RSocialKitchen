@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "JSONKit", "1.5pre"
-  s.dependency "RUIKitchen", "0.0.9"
+  s.dependency "RUIKitchen", "~> 0.0.8"
   s.dependency "SVProgressHUD", "0.9"
 end
