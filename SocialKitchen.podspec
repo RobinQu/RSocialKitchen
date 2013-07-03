@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SocialKitchen"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "Kitchen sink that demostartes OAuth flow for service providers(weibo, tcwb)."
   s.homepage     = "https://github.com/RobinQu/RSocialKitchen"
   
