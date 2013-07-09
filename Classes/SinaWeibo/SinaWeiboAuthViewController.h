@@ -11,13 +11,14 @@
 #import "SinaWeibo.h"
 #import "SinaWeiboRequest.h"
 
+
 @interface SinaWeiboAuthViewController : BaseAuthViewController
 
 - (id)initWithParameters:(NSDictionary *)parameters delegate:(id<SinaWeiboDelegate>)delegate;
 
 + (id)sharedAuthViewController;
 
-+ (void)configureSharedDelegate:(id<SinaWeiboDelegate>)delegate;
++ (void)configureSharedDelegate:(id<SinaWeiboDelegate, RWebBrowserDelegate>)delegate;
 
 
 @end

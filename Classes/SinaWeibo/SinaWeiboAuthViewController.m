@@ -33,23 +33,36 @@ UIViewController* findTopMostVC()
 
 @implementation SinaWeiboAuthViewController
 
+@synthesize webView = _webView;
+
 + (id)sharedAuthViewController
 {
     static SinaWeiboAuthViewController *vc = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSString *fp = [[NSBundle mainBundle] pathForResource:@"weibo" ofType:@"plist"];
-        NSDictionary *p = [[NSDictionary alloc] initWithContentsOfFile:fp];
+        NSDictionary *p = nil;
+        if (fp) {
+            p = [[NSDictionary alloc] initWithContentsOfFile:fp];
+        } else {
+            p = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"Weibo"];
+        }
         NSAssert(p, @"Configration file weibo.plist is missing");
         vc = [[SinaWeiboAuthViewController alloc] initWithParameters:p];
     });
     return vc;
 }
 
-+ (void)configureSharedDelegate:(id<SinaWeiboDelegate>)delegate
++ (void)configureSharedDelegate:(id<SinaWeiboDelegate, RWebBrowserDelegate>)delegate
 {
     SinaWeiboAuthViewController *vc = [self sharedAuthViewController];
     vc.sinaweibo.delegate = delegate;
+    vc.delegate = delegate;
+//
+//    //for auth view vc, its webview delegate must be itself
+//    vc.webView = nil;
+//    vc.webView.delegate = vc;
+    NSLog(@"config delegate %@", delegate);
 }
 
 
@@ -70,6 +83,15 @@ UIViewController* findTopMostVC()
         self.sinaweibo.authVC = self;
     }
     return self;
+}
+
+- (UIWebView *)webView
+{
+    if (!_webView) {
+        _webView = [[UIWebView alloc] initWithFrame:[self frameForMainContent]];
+        _webView.delegate = self;
+    }
+    return _webView;
 }
 
 - (void)viewDidLoad
@@ -125,7 +147,6 @@ UIViewController* findTopMostVC()
     NSString *url = request.URL.absoluteString;
     
     NSString *siteRedirectURI = [NSString stringWithFormat:@"%@%@", kSinaWeiboSDKOAuth2APIDomain, self.redirectURL];
-    
     if ([url hasPrefix:self.redirectURL] || [url hasPrefix:siteRedirectURI])
     {
         NSString *error_code = [SinaWeiboRequest getParamValueFromUrl:url paramName:@"error_code"];
