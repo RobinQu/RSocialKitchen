@@ -17,7 +17,7 @@
 
 #import "SinaWeiboRequest.h"
 #import "SinaWeiboConstants.h"
-#import "JSONKit.h"
+//#import "JSONKit.h"
 #import "SinaWeibo.h"
 #import "OAuthData.h"
 
@@ -203,7 +203,8 @@
 - (id)parseJSONData:(NSData *)data error:(NSError **)error
 {
     NSError *parseError = nil;
-	id result =[data objectFromJSONDataWithParseOptions:JKParseOptionStrict error:&parseError];
+//	id result =[data objectFromJSONDataWithParseOptions:JKParseOptionStrict error:&parseError];
+    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError];
 	
 	if (parseError && (error != nil))
     {
