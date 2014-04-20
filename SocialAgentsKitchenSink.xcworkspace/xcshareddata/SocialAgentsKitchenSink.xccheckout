@@ -5,23 +5,23 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E2703BF9-6CA2-45EA-AD7D-8467C45309F6</string>
+	<string>7C412B4C-DA05-45A9-AA59-1CE8828B3E0F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SocialAgentsKitchenSink</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6A0DC3A7-0898-44EC-B508-5312CA94B7EA</key>
+		<key>0980FA24-E702-432A-A0CE-1DCC4C6D7C86</key>
 		<string>ssh://github.com/RobinQu/RSocialKitchen.git</string>
-		<key>91CC8A33-17B7-435B-BA0B-A623A700B5DC</key>
+		<key>22148E6A-1479-43B4-BADE-38209CDB4510</key>
 		<string>ssh://github.com/RobinQu/RUIKitchen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SocialAgentsKitchenSink.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6A0DC3A7-0898-44EC-B508-5312CA94B7EA</key>
+		<key>0980FA24-E702-432A-A0CE-1DCC4C6D7C86</key>
 		<string>..</string>
-		<key>91CC8A33-17B7-435B-BA0B-A623A700B5DC</key>
+		<key>22148E6A-1479-43B4-BADE-38209CDB4510</key>
 		<string>../../RUIKitchenSink</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -29,14 +29,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6A0DC3A7-0898-44EC-B508-5312CA94B7EA</string>
+	<string>0980FA24-E702-432A-A0CE-1DCC4C6D7C86</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>91CC8A33-17B7-435B-BA0B-A623A700B5DC</string>
+			<string>22148E6A-1479-43B4-BADE-38209CDB4510</string>
 			<key>IDESourceControlWCCName</key>
 			<string>RUIKitchenSink</string>
 		</dict>
@@ -44,7 +44,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6A0DC3A7-0898-44EC-B508-5312CA94B7EA</string>
+			<string>0980FA24-E702-432A-A0CE-1DCC4C6D7C86</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SocialAgentsKitchenSink</string>
 		</dict>

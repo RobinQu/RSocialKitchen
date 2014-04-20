@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/RobinQu/RSocialKitchen.git", :tag => "#{s.version}" }
 
-  s.platform     = :ios, "5.0"
+  s.platform     = :ios, "6.0"
 
   s.source_files = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "RUIKitchen", "~> 0.0.8"
-  s.dependency "SVProgressHUD", "0.9"
+  s.dependency "SVProgressHUD", "~> 1.0"
 end
